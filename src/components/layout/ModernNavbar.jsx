@@ -5,9 +5,12 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const ModernNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   
   // Handle scroll effect
   useEffect(() => {
+    setIsClient(true);
+    
     const handleScroll = () => {
       const offset = window.scrollY;
       if (offset > 50) {
@@ -16,6 +19,9 @@ const ModernNavbar = () => {
         setScrolled(false);
       }
     };
+    
+    // Check initial scroll position
+    handleScroll();
     
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -32,10 +38,13 @@ const ModernNavbar = () => {
     <Navbar 
       expand="lg" 
       fixed="top"
-      className={`py-3 ${scrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}
+      className={`py-3 ${scrolled ? 'bg-white shadow-lg' : ''}`}
       style={{
         transition: 'all 0.3s ease',
-        boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.05)' : 'none'
+        boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.05)' : 'none',
+        border: 'none',
+        borderBottom: 'none',
+        backgroundColor: scrolled ? '#fff' : 'transparent'
       }}
     >
       <Container>
@@ -54,7 +63,14 @@ const ModernNavbar = () => {
           </span>
         </Navbar.Brand>
         
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle 
+          aria-controls="basic-navbar-nav" 
+          style={{
+            border: 'none',
+            boxShadow: 'none',
+            padding: '4px 8px'
+          }}
+        />
         
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="align-items-center">

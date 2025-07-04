@@ -114,8 +114,6 @@ const Hero = () => {
             </p>
           </div>
 
-
-
           {/* Professional CTA */}
           <div className="cta-section">
             <button className="enterprise-cta">
@@ -162,12 +160,13 @@ const Hero = () => {
           align-items: center;
           justify-content: center;
           padding: 0 40px;
-          opacity: 0;
-          transition: opacity 1.5s ease;
+          /* FIXED: Start with background visible, only animate content */
+          padding-top: 100px; /* Account for fixed navbar */
         }
 
-        .enterprise-hero.loaded {
+        .enterprise-hero.loaded .content-container {
           opacity: 1;
+          transform: translateY(0);
         }
 
         /* Background Architecture */
@@ -259,16 +258,14 @@ const Hero = () => {
           text-align: center;
           max-width: 1200px;
           width: 100%;
-          margin-top: 80px;
+          /* FIXED: Removed margin-top that could interfere with navbar */
         }
 
         .content-container {
-          animation: contentFadeIn 2s ease-out 0.5s both;
-        }
-
-        @keyframes contentFadeIn {
-          0% { opacity: 0; transform: translateY(40px); }
-          100% { opacity: 1; transform: translateY(0); }
+          /* FIXED: Start invisible and animate in */
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 1.5s ease 0.5s;
         }
 
         /* Animated Section Elements */
@@ -384,8 +381,6 @@ const Hero = () => {
             text-shadow: 0 0 8px rgba(255,255,255,0.3);
           }
         }
-
-        /* Remove the old enterprise-metrics styles */
 
         /* Professional CTA */
         .cta-section {
@@ -503,12 +498,15 @@ const Hero = () => {
           .trust-indicators {
             gap: 2rem;
           }
+          
+          .enterprise-hero {
+            padding-top: 80px; /* Adjust for mobile navbar */
+          }
         }
 
         @media (max-width: 768px) {
           .enterprise-hero {
-            padding: 0 20px;
-            margin-top: 40px;
+            padding: 80px 20px 0 20px; /* FIXED: Better mobile padding */
           }
           
           .trust-indicators {
@@ -533,6 +531,10 @@ const Hero = () => {
           
           .proposition-text {
             font-size: 1rem;
+          }
+          
+          .enterprise-hero {
+            padding-top: 70px; /* FIXED: Smaller navbar padding for very small screens */
           }
         }
       `}</style>
