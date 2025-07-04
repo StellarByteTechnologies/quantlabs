@@ -101,9 +101,11 @@ const Hero = () => {
           
           {/* Primary Headline */}
           <h1 className="primary-headline">
-            <span className="headline-prefix">We help engineer the</span>
-            <span className="headline-emphasis">architecture of tomorrow's intelligence.</span>
-          </h1>
+  <span className="headline-prefix">We help engineer the</span>
+  <span className="headline-emphasis">
+    architecture of tomorrow&apos;s intelligence.
+  </span>
+</h1>
 
           {/* Value Proposition */}
           <div className="value-proposition">

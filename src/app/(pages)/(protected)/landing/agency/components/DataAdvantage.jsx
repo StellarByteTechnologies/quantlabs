@@ -152,9 +152,9 @@ const DataAdvantage = () => {
         {/* Bottom Summary */}
         <div className="section-summary">
           <div className="summary-content">
-            <p className="summary-text">
-              QuantLabs doesn't just build AI features. We engineer <strong>secure, scalable, data-grounded intelligence</strong>, leveraging the deepest ML and DL expertise, so your business is powered by systems that truly learn, adapt, and drive outcomes.
-            </p>
+          <p className="summary-text">
++              QuantLabs doesn&apos;t just build AI features. We engineer <strong>secure, scalable, data-grounded intelligence</strong>, leveraging the deepest ML and DL expertise, so your business is powered by systems that truly learn, adapt, and drive outcomes.
++            </p>
             
             <div className="summary-cta">
               <button className="contact-cta">
