@@ -4,6 +4,7 @@ import Hero from '../../(protected)/landing/agency/components/Hero';
 import { blogPosts, jobDetails, projects, services } from '../../(protected)/landing/agency/data';
 import Clients from '../../(protected)/landing/agency/components/Clients';
 //import Blogs from '../../(protected)/landing/agency/components/Blogs';
+import DataMasterySection from '../../(protected)/landing/agency/components/DataMastery'
 import CapabilitiesSection from '../../(protected)/landing/app/components/CapabilitiesSection';
 import ComparisonSection from '../../(protected)/landing/agency/components/ComparisonSection';
 import CaseStudiesSection from '../../(protected)/landing/coworking/components/CaseStudiesSection';
@@ -20,6 +21,7 @@ const Home = () => {
         <Hero />
       </div>
       <DataAdvantage/>
+      <DataMasterySection/>
        <ComparisonSection />
       < NumberSection/>
       <CaseStudiesSection />
